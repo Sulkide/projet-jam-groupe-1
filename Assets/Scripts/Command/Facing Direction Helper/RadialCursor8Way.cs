@@ -10,7 +10,7 @@ public class RadialCursor8Way : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private Transform player;
-    [SerializeField] private Camera mainCamera;
+    [SerializeField] private GameObject refObj;
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private string lookActionName  = "Look";   // Vector2 (stick droit)
     [SerializeField] private string pointActionName = "Point";
@@ -71,7 +71,6 @@ public class RadialCursor8Way : MonoBehaviour
     private void Awake()
     {
         if (!player) player = transform;
-        if (!mainCamera) mainCamera = Camera.main;
         if (!playerManager) playerManager = PlayerManager.Instance; 
         
         
@@ -222,8 +221,8 @@ public class RadialCursor8Way : MonoBehaviour
     private void UpdateCursorTransform(Vector3 worldPos)
     {
         _cursorTf.position = new Vector3(worldPos.x, player.position.y + yOffset, worldPos.z);
-        if (billboardToCamera && mainCamera)
-            _cursorTf.forward = (mainCamera.transform.position - _cursorTf.position).normalized;
+        if (billboardToCamera && refObj)
+            _cursorTf.forward = (refObj.transform.position - _cursorTf.position).normalized;
         else
             _cursorTf.up = Vector3.up;
     }
@@ -235,7 +234,7 @@ public class RadialCursor8Way : MonoBehaviour
         bool stickActive  = false;
         
         Vector3 vPointer = Vector3.zero;
-        if (_pointAction != null && _pointAction.enabled && mainCamera)
+        if (_pointAction != null && _pointAction.enabled && refObj)
         {
             Vector2 pointerPos = _pointAction.ReadValue<Vector2>();
             float sq = (pointerPos - _prevPointerPos).sqrMagnitude;
@@ -246,7 +245,7 @@ public class RadialCursor8Way : MonoBehaviour
                 _lastPointerTime = Time.unscaledTime;
                 _prevPointerPos  = pointerPos;
 
-                var ray = mainCamera.ScreenPointToRay(pointerPos);
+                var ray = Camera.main.ScreenPointToRay(pointerPos);
                 Plane plane = new Plane(Vector3.up, new Vector3(0f, player.position.y + yOffset, 0f));
                 if (plane.Raycast(ray, out float enter))
                 {

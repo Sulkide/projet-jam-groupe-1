@@ -182,4 +182,6 @@ public class EnemyRole : EntityRole, IKnockbackable
         Gizmos.color = new Color(1f, 0.8f, 0.1f, 0.10f);
         Gizmos.DrawSphere(entity.transform.position, loseAggroRadius);
     }
+
+
 }

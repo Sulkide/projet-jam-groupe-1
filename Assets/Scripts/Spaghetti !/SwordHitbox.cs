@@ -28,11 +28,15 @@ public class SwordHitbox : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if(other.tag == "Bomb") { other.GetComponent<Rigidbody>().AddForce((other.transform.position - transform.position).normalized * knockbackForce,ForceMode.Impulse); Debug.Log("BOMBHIT"); }
 
         var kb = other.GetComponent<EnemyKnockbackController>();
+
         if (kb == null) return;
 
         kb.ActivateKnockback(_hitDirection, knockbackForce, knockbackMult);
+
+
         
     }
 

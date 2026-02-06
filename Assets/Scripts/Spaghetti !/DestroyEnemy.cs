@@ -30,10 +30,10 @@ public class DestroyEnemy : MonoBehaviour
         if (_consumed) return;
         if (!hit) return;
         
-        int layer = hit.layer;
-        if (((1 << layer) & enemyLayers.value) == 0) return;
+        //int layer = hit.layer;
+        //if (((1 << layer) & enemyLayers.value) == 0) return;
 
-        if (requireEnemyTag && !hit.CompareTag(enemyTag)) return;
+        //if (requireEnemyTag && !hit.CompareTag(enemyTag)) return;
 
         GameObject target = destroyRootObject ? hit.transform.root.gameObject : hit;
 

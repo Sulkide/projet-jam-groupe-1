@@ -8,6 +8,7 @@ TagManager:
   - ProjectilePlayer2
   - ProjectileEnemy
   - Enemy
+  - Bomb
   layers:
   - Default
   - TransparentFX

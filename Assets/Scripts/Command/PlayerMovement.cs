@@ -697,7 +697,7 @@ public class PlayerMovement : NetworkBehaviour
     {
         _isSwording = true;
         _swordCdUntil = Time.time + swordCooldown;
-        inputLocked = true;
+        //inputLocked = true;
         PlayerManager.Instance?.NotifyMoving(false);
         PlayerManager.Instance?.NotifyRun(false);
 
@@ -728,7 +728,8 @@ public class PlayerMovement : NetworkBehaviour
     {
         if (!swordPrefab) return;
 
-        GameObject go = Instantiate(swordPrefab, pos, rot);
+        GameObject go = Instantiate(swordPrefab, pos, rot, transform);
+        go.transform.SetParent(transform);
 
         // Initialise hitbox côté serveur
         var hitbox = go.GetComponent<SwordHitbox>();
