@@ -95,12 +95,144 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Ennemie1_sprite_sheet_trigger_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 917
+        height: 1327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f15b8a6793009a4bb8dde1977cab0ed
+      internalID: 106243181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemie1_sprite_sheet_trigger_1
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 0
+        width: 917
+        height: 1327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c11c89210a2e16d4193b0e05aa9480e5
+      internalID: 343940931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemie1_sprite_sheet_trigger_2
+      rect:
+        serializedVersion: 2
+        x: 1834
+        y: 0
+        width: 917
+        height: 1327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e36e8f491971ad349908321fbd3153c6
+      internalID: 731335921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemie1_sprite_sheet_trigger_3
+      rect:
+        serializedVersion: 2
+        x: 2751
+        y: 0
+        width: 917
+        height: 1327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad95ab1972c2f1c4195ef69cdcf20ebb
+      internalID: -1405520915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemie1_sprite_sheet_trigger_4
+      rect:
+        serializedVersion: 2
+        x: 3668
+        y: 0
+        width: 917
+        height: 1327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81eefb0dfe6e80e438cf840a6cd103f9
+      internalID: -1006566386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ennemie1_sprite_sheet_trigger_5
+      rect:
+        serializedVersion: 2
+        x: 4585
+        y: 0
+        width: 917
+        height: 1327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f98a32a52fe5ccf4689a076cb438cdd0
+      internalID: 1510833188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d2b05c9695e09f24cbd3c939d1e555de
     internalID: 0
     vertices: []
     indices: 
@@ -108,8 +240,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":917.0,"y":1327.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Ennemie1_sprite_sheet_trigger_0: 106243181
+      Ennemie1_sprite_sheet_trigger_1: 343940931
+      Ennemie1_sprite_sheet_trigger_2: 731335921
+      Ennemie1_sprite_sheet_trigger_3: -1405520915
+      Ennemie1_sprite_sheet_trigger_4: -1006566386
+      Ennemie1_sprite_sheet_trigger_5: 1510833188
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -19,14 +19,6 @@ public class PlayerClass : MonoBehaviour
 
 	[Header("Parametre des mouvement")]
 	[SerializeField] private float moveSpeed = 5f;
-	[SerializeField] private float runMult = 2f;
-	[SerializeField] private float runRampUpTime = 0.25f;
-	[SerializeField] private float runRampDownTime = 0.20f;
-	private float _runMultCurrent = 1f;
-	private Coroutine _runLerpRoutine;
-	[SerializeField] private float midAirMoveSpeed = 3f;
-	private float inputDeadzone = 0.2f;
-	[HideInInspector] public bool isMenuOn;
 
 	[Header("Parametre mode Revert")]
 	[SerializeField] private float recordWindowSeconds = 10f;

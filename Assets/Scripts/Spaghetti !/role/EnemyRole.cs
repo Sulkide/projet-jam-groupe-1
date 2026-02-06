@@ -34,6 +34,7 @@ public class EnemyRole : EntityRole, IKnockbackable
     [SerializeField] private float stunnedUntil;
 
     private Rigidbody _rb;
+    private Animator _anim;
 
     // Buffer non-alloc pour éviter du GC
     private readonly Collider[] _hits = new Collider[16];
@@ -43,6 +44,7 @@ public class EnemyRole : EntityRole, IKnockbackable
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
+        _anim = GetComponentInChildren<Animator>();
     }
 
     private void OnDestroy()
@@ -71,8 +73,11 @@ public class EnemyRole : EntityRole, IKnockbackable
             followStrategy.SetTarget(entity, currentTarget);
 
             if (entity.Strategy != followStrategy)
-                entity.SetStrategy(followStrategy);
-        }
+            { 
+                entity.SetStrategy(followStrategy); 
+                _anim.SetTrigger("Trigger");
+			}
+		}
         else
         {
             // Pas de target : revenir en free move
@@ -80,13 +85,17 @@ public class EnemyRole : EntityRole, IKnockbackable
                 followStrategy.ClearTarget(entity);
 
             if (freeMoveStrategy != null && entity.Strategy != freeMoveStrategy)
+            {
                 entity.SetStrategy(freeMoveStrategy);
-        }
+                _anim.SetTrigger("Idle");
+            }
 
-        // NOTE : ne pas bouger ici.
-        // Le mouvement se fait dans MovementStrategy.Tick via BaseEntity.Update().
-        // (Sinon tu risques un double déplacement.)
-    }
+		}
+
+		// NOTE : ne pas bouger ici.
+		// Le mouvement se fait dans MovementStrategy.Tick via BaseEntity.Update().
+		// (Sinon tu risques un double déplacement.)
+	}
 
     private void UpdateTarget()
     {

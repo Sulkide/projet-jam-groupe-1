@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6468283020370079687}
-  - component: {fileID: 4647309738647296859}
   - component: {fileID: 8315195454643924169}
   - component: {fileID: 8883438795104849781}
+  - component: {fileID: 2879181045387622482}
   m_Layer: 6
   m_Name: Animation
   m_TagString: Untagged
@@ -28,31 +28,12 @@ Transform:
   m_GameObject: {fileID: 2423735150999676575}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.13, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalPosition: {x: 0, y: 2.15, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 9188771791525656536}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4647309738647296859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2423735150999676575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 094cb717c0691bf4490aa35bb87ceae0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EntitySpriteAnimator2D
-  targetRenderer: {fileID: 8315195454643924169}
-  entity: {fileID: 7761327626294298115}
-  useRigidbodyVelocity: 0
-  velocityMoveThreshold: 0.02
-  rules: []
-  globalSpeed: 1
-  debugLog: 0
 --- !u!212 &8315195454643924169
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -123,6 +104,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17596188309b4f49a20f0a65a18ce16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!95 &2879181045387622482
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2423735150999676575}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 93057ceb52b318f49bf9a7756ed5c142, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6452886058369152626
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,7 +391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2297860146
+  GlobalObjectIdHash: 2751688015
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
