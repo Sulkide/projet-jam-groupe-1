@@ -8,9 +8,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6438677872186459146, guid: 115ea60d80fe5d6499c7681d85862dad, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3060044090
+      objectReference: {fileID: 0}
     - target: {fileID: 8315016809664714471, guid: 115ea60d80fe5d6499c7681d85862dad, type: 3}
       propertyPath: m_Name
-      value: Enemy base Prefab
+      value: Bomb Enemy prefab
       objectReference: {fileID: 0}
     - target: {fileID: 9188771791525656536, guid: 115ea60d80fe5d6499c7681d85862dad, type: 3}
       propertyPath: m_LocalPosition.x

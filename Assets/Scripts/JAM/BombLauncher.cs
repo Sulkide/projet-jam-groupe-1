@@ -27,6 +27,6 @@ public class BombLauncher : MonoBehaviour
         Transform player = PlayerClass.instance.transform;
         Vector3 dir = player.position - transform.position;
         GameObject bomb = Instantiate(bombPrefab, transform.position + dir.normalized * bombSpawnDistance, Quaternion.identity);
-        bomb.GetComponent<Rigidbody>().AddForce(dir.normalized*50f*dir.magnitude/100f, ForceMode.Impulse);
+        bomb.GetComponent<Rigidbody>().AddForce(dir.normalized*50f*dir.magnitude/30f, ForceMode.Impulse);
     }
 }

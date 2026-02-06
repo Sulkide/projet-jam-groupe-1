@@ -39,9 +39,16 @@ public class DestroyEnemy : MonoBehaviour
 
         if (target == gameObject) return;
 
-        Destroy(target);
+        if(target.tag == "Enemy")
+        {
+            target.GetComponent<EnemyRole>().StartCoroutine("Death");
+        }
+        else
+        {
+			Destroy(target);
+		}
 
-        if (disableAfterHit)
+		if (disableAfterHit)
         {
             _consumed = true;
             gameObject.SetActive(false);

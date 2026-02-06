@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -196,5 +197,12 @@ public class EnemyRole : EntityRole, IKnockbackable
         Gizmos.DrawSphere(entity.transform.position, loseAggroRadius);
     }
 
+    public IEnumerator Death()
+    {
+        _anim.SetTrigger("Death");
+        _rb.linearVelocity = Vector3.zero;
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
+    }
 
 }
