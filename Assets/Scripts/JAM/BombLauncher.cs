@@ -8,10 +8,18 @@ public class BombLauncher : MonoBehaviour
 
     float bombSpawnDistance = 2f;
 
+    int index;
+
+    private void Awake()
+    {
+        LevelClass lvl = transform.parent.GetComponent<LevelClass>();
+		index = LevelsManager.Instance.Levels.IndexOf( lvl );
+    }
     void Update()
     {
+        if (LevelsManager.Instance.lvlIndex != index) return;
         CoolDown-=Time.deltaTime;
-        if(CoolDown <= 0) { SpawnBomb(); CoolDown = 5f; }
+        if(CoolDown <= 0) { SpawnBomb(); CoolDown = 10f; }
     }
 
     void SpawnBomb()
@@ -19,6 +27,6 @@ public class BombLauncher : MonoBehaviour
         Transform player = PlayerClass.instance.transform;
         Vector3 dir = player.position - transform.position;
         GameObject bomb = Instantiate(bombPrefab, transform.position + dir.normalized * bombSpawnDistance, Quaternion.identity);
-        bomb.GetComponent<Rigidbody>().AddForce(dir.normalized*50f, ForceMode.Impulse);
+        bomb.GetComponent<Rigidbody>().AddForce(dir.normalized*50f*dir.magnitude/100f, ForceMode.Impulse);
     }
 }

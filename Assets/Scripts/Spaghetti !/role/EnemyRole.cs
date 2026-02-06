@@ -45,6 +45,10 @@ public class EnemyRole : EntityRole, IKnockbackable
         _rb = GetComponent<Rigidbody>();
     }
 
+    private void OnDestroy()
+    {
+        LevelsManager.Instance.Levels[LevelsManager.Instance.lvlIndex].EnemyAmount--;
+    }
     public override void Tick(float dt)
     {
         // 0) Si stunned : on coupe le déplacement AI (sinon la stratégie annule la physique)
