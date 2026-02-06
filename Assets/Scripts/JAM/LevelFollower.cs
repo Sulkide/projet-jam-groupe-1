@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class LevelFollower : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    Vector3 Offset;
+    private void Start()
     {
-        
+        Offset = transform.position - LevelsManager.Instance.Levels[0].transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MoveToIndex()
     {
-        
+        transform.position = LevelsManager.Instance.Levels[LevelsManager.Instance.lvlIndex].transform.position + Offset;
     }
 }

@@ -24,6 +24,10 @@ public class LevelsManager : MonoBehaviour
 		if (lvlIndex < Levels.Count-1)
 		{
 			Levels[lvlIndex + 1].gameObject.SetActive(true);
+			if (lvlIndex < Levels.Count - 2)
+			{
+				Levels[lvlIndex + 2].gameObject.SetActive(true);
+			}
 			lvlIndex++;
 		}
 		else

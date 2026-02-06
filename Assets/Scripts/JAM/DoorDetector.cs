@@ -7,5 +7,6 @@ public class DoorDetector : MonoBehaviour
     {
         if (other.tag != "Player") return;
         door.SetActive(true);
+        Camera.main.GetComponent<LevelFollower>().MoveToIndex();
     }
 }
