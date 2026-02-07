@@ -7,7 +7,9 @@ public class LevelClass : MonoBehaviour
 	public int EnemyAmount;
 
     public GameObject ExitDoor;
-    bool ded = false;
+	public GameObject shiningDoor;
+
+	bool ded = false;
     private void Update()
     {
         if (EnemyAmount <= 0&&!ded)
@@ -15,6 +17,7 @@ public class LevelClass : MonoBehaviour
             ded = true;
             LevelsManager.Instance.NextLevel();
             ExitDoor.SetActive(false);
+            shiningDoor.SetActive(true);
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerClass : MonoBehaviour
 {
@@ -67,13 +68,15 @@ public class PlayerClass : MonoBehaviour
 
 	public void TakeDamage(int Damage)
 	{
-		if (PV - Damage <= 0) { Death(); }
+		if (PV - Damage <= 0) { StartCoroutine(Death()); }
 		PV -= Damage;
 	}
 
-	public void Death()
+	public IEnumerator Death()
 	{
-
+		BlackScreen.Fade(1f);
+		yield return new WaitForSeconds(1f);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
 	}
 	private void Awake()
     {

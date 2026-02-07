@@ -19,7 +19,7 @@ public class BombLauncher : MonoBehaviour
     {
         if (LevelsManager.Instance.lvlIndex != index) return;
         CoolDown-=Time.deltaTime;
-        if(CoolDown <= 0) { SpawnBomb(); CoolDown = 10f; }
+        if(CoolDown <= 0) { SpawnBomb(); CoolDown = 10f;}
     }
 
     void SpawnBomb()
