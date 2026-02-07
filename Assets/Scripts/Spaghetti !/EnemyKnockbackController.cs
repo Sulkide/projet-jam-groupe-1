@@ -103,12 +103,12 @@ public class EnemyKnockbackController : MonoBehaviour
 
     public void DisableStuff()
     {
-        Debug.Log($"[EnemyKnockbackController] DisableStuff count={scriptsToDisable.Count} on {name}");
+        //Debug.Log($"[EnemyKnockbackController] DisableStuff count={scriptsToDisable.Count} on {name}");
 
         for (int i = 0; i < scriptsToDisable.Count; i++)
         {
             var b = scriptsToDisable[i];
-            Debug.Log($"[EnemyKnockbackController] disabling[{i}] => {(b ? b.GetType().Name : "NULL")}");
+            //Debug.Log($"[EnemyKnockbackController] disabling[{i}] => {(b ? b.GetType().Name : "NULL")}");
             if (b != null) b.enabled = false;
         }
 

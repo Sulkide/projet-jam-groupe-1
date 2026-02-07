@@ -43,7 +43,7 @@ public class DestroyEnemy : MonoBehaviour
         {
             target.GetComponent<EnemyRole>().StartCoroutine("Death");
         }
-        else
+        else if (target.tag!="Untagged")
         {
 			Destroy(target);
 		}

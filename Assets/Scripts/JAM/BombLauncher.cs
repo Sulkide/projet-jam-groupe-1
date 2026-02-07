@@ -6,7 +6,7 @@ public class BombLauncher : MonoBehaviour
 
     public GameObject bombPrefab;
 
-    float bombSpawnDistance = 7f;
+    float bombSpawnDistance = 3f;
 
     int index;
 
@@ -24,6 +24,7 @@ public class BombLauncher : MonoBehaviour
 
     void SpawnBomb()
     {
+        if (Vector3.Distance(transform.position, PlayerClass.instance.transform.position) > 20f) return;
         Debug.Log("here");
         Transform player = PlayerClass.instance.transform;
         Vector3 dir = player.position - transform.position;

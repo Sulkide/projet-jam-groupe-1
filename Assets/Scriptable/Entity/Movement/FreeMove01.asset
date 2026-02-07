@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: FreeMove01
   m_EditorClassIdentifier: Assembly-CSharp::FreeMoveStrategy
   changeDirInterval: {x: 999, y: 999}
-  idleChance: 0.25
+  idleChance: 1
   idleDurationRange: {x: 999, y: 999}
-  wanderRadius: 0
+  wanderRadius: 0.01

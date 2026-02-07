@@ -23,6 +23,6 @@ public class BombScript : MonoBehaviour
 
     public void Explode()
     {
-        bombHitZone.SetActive(true);
+        if(bombHitZone)bombHitZone.SetActive(true);
     }
 }

@@ -20,7 +20,7 @@ public class BlackScreen : MonoBehaviour
 
     IEnumerator FadeCoroutine(float target)
     {
-        while (Mathf.Abs(image.color.a - target) > 0.01f)
+        while (Mathf.Abs(image.color.a - target) > 0.001f)
         {
             image.color = new Color(0,0,0,Mathf.MoveTowards(image.color.a,target,0.01f));
             yield return null;

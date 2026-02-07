@@ -9,6 +9,6 @@ public class DoorDetector : MonoBehaviour
         door.SetActive(true);
         if(LevelsManager.Instance.lvlIndex>0) LevelsManager.Instance.Levels[LevelsManager.Instance.lvlIndex-1].shiningDoor.SetActive(false);
         Camera.main.GetComponent<LevelFollower>().MoveToIndex();
-        PlayerClass.instance.PV = Mathf.Min(PlayerClass.instance.PV+1);
+        PlayerClass.instance.PV = Mathf.Min(5,PlayerClass.instance.PV+1);
     }
 }

@@ -202,6 +202,7 @@ public class EnemyRole : EntityRole, IKnockbackable
         _anim.SetTrigger("Death");
         _rb.linearVelocity = Vector3.zero;
         yield return new WaitForSeconds(0.5f);
+        //.Log(this.transform.parent);
         Destroy(gameObject);
     }
 
