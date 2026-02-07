@@ -10,6 +10,7 @@ public class PlayerClass : MonoBehaviour
 {
     PlayerInput input;
     Rigidbody rb;
+	Animator anim;
 	Collider col;
 
 	public int PV;
@@ -70,6 +71,7 @@ public class PlayerClass : MonoBehaviour
 	{
 		if (PV - Damage <= 0) { StartCoroutine(Death()); }
 		PV -= Damage;
+		//StartCoroutine(InvincibilityFrames());
 	}
 
 	public IEnumerator Death()
@@ -84,6 +86,7 @@ public class PlayerClass : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 		playerInput = GetComponent<PlayerInput>();
 		col = GetComponent<Collider>();
+		anim = GetComponentInChildren<Animator>();
 	}
 	private void OnEnable()
 	{
@@ -157,19 +160,22 @@ public class PlayerClass : MonoBehaviour
 		float speed = moveSpeed ;
 
 		rb.AddForce(raw.x*speed, 0,raw.y*speed);
-		transform.rotation = Quaternion.LookRotation(new Vector3(raw.x,0,raw.y));
+		if (raw.magnitude > 0.1f) anim.SetBool("Moving",true);
+		else anim.SetBool("Moving", false);
+		transform.rotation = Quaternion.LookRotation(new Vector3(raw.x, 0, raw.y));
 
 	}
 
 
 	void OnSwordPressed(InputAction.CallbackContext ctx)
 	{
+		anim.SetTrigger("Attacking");
 		StartCoroutine(SwordSwipe());
 	}
 
 	private IEnumerator SwordSwipe()
 	{
-		Vector3 SpawnOffset = rb.linearVelocity.normalized * swordSpawnDistance;
+		Vector3 SpawnOffset = transform.forward * swordSpawnDistance;
 		GameObject obj = Instantiate(swordPrefab, transform.position + SpawnOffset, Quaternion.identity, transform);
 		obj.transform.rotation = transform.rotation;
 		var hitbox = obj.GetComponent<SwordHitbox>();

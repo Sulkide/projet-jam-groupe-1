@@ -28,13 +28,15 @@ public class SwordHitbox : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Bomb") { other.GetComponent<Rigidbody>().AddForce((other.transform.position - transform.position).normalized * knockbackForce,ForceMode.Impulse); Debug.Log("BOMBHIT"); }
+        if(other.tag == "Bomb") { other.GetComponent<Rigidbody>().AddForce((other.transform.position - PlayerClass.instance.transform.position).normalized * knockbackForce*3,ForceMode.Impulse); Debug.Log("BOMBHIT"); }
 
         var kb = other.GetComponent<EnemyKnockbackController>();
 
         if (kb == null) return;
 
-        kb.ActivateKnockback(_hitDirection, knockbackForce, knockbackMult);
+        Vector3 dir = kb.transform.position - PlayerClass.instance.transform.position;
+
+        kb.ActivateKnockback(dir.normalized, knockbackForce, knockbackMult);
 
 
         

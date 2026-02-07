@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BombScript : MonoBehaviour
 {
-    public float timer = 2f;
+    public float timer = 4f;
     public GameObject bombHitZone;
     void Update()
     {
@@ -17,7 +17,7 @@ public class BombScript : MonoBehaviour
     {
         if(collision.collider.tag == "Enemy")
         {
-            Explode();
+            //Explode();
         }
     }
 

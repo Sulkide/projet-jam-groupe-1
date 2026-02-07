@@ -132,5 +132,5 @@ MonoBehaviour:
     m_Bits: 64
   requireEnemyTag: 0
   enemyTag: Enemy
-  destroyRootObject: 1
+  destroyRootObject: 0
   disableAfterHit: 0
