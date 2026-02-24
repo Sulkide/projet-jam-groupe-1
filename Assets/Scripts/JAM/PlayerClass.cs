@@ -159,7 +159,7 @@ public class PlayerClass : MonoBehaviour
 		float dt = Time.deltaTime;
 		float speed = moveSpeed ;
 
-		rb.AddForce(raw.x*speed, 0,raw.y*speed);
+		rb.AddForce(new Vector3(raw.x*speed, 0,raw.y*speed) * Time.deltaTime * 300);
 		if (raw.magnitude > 0.1f) anim.SetBool("Moving",true);
 		else anim.SetBool("Moving", false);
 		transform.rotation = Quaternion.LookRotation(new Vector3(raw.x, 0, raw.y));

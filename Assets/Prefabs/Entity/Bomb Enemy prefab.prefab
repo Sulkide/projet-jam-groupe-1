@@ -8,14 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2879181045387622482, guid: 115ea60d80fe5d6499c7681d85862dad, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 242bd86c5b476ef42b74e73a37294c79, type: 2}
     - target: {fileID: 6438677872186459146, guid: 115ea60d80fe5d6499c7681d85862dad, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 2309831671
+      value: 1824716767
       objectReference: {fileID: 0}
     - target: {fileID: 8315016809664714471, guid: 115ea60d80fe5d6499c7681d85862dad, type: 3}
       propertyPath: m_Name
       value: Bomb Enemy prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 8315195454643924169, guid: 115ea60d80fe5d6499c7681d85862dad, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 657219984, guid: 326b2f9b919356041bf92f4617c6ed87, type: 3}
     - target: {fileID: 9188771791525656536, guid: 115ea60d80fe5d6499c7681d85862dad, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.47

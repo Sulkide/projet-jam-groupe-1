@@ -26,6 +26,7 @@ public class BombLauncher : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, PlayerClass.instance.transform.position) > 20f) return;
         Debug.Log("here");
+        GetComponent<EnemyRole>()._anim.SetTrigger("Attack");
         Transform player = PlayerClass.instance.transform;
         Vector3 dir = player.position - transform.position;
         GameObject bomb = Instantiate(bombPrefab, transform.position + dir.normalized * bombSpawnDistance, Quaternion.identity);

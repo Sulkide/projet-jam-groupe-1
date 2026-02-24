@@ -35,7 +35,7 @@ public class EnemyRole : EntityRole, IKnockbackable
     [SerializeField] private float stunnedUntil;
 
     private Rigidbody _rb;
-    private Animator _anim;
+    public Animator _anim;
 
     // Buffer non-alloc pour éviter du GC
     private readonly Collider[] _hits = new Collider[16];
@@ -201,7 +201,7 @@ public class EnemyRole : EntityRole, IKnockbackable
     {
         _anim.SetTrigger("Death");
         _rb.linearVelocity = Vector3.zero;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         //.Log(this.transform.parent);
         Destroy(gameObject);
     }

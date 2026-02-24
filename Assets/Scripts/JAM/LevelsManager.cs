@@ -36,8 +36,9 @@ public class LevelsManager : MonoBehaviour
 		}
 	}
 
+	public GameObject end;
 	void Win()
 	{
-
+		end.SetActive(true);
 	}
 }
